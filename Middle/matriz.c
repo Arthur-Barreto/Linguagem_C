@@ -63,16 +63,16 @@ void show(){
 
     for (int i = 0; i<l; i++){
         /* a cada linha adiciona o separador, com 28 "_" */
-        printf("-------------------------------------\n");
+        printf("-------------------------------------------------\n");
 
         for (int j = 0; j<c; j++){
 
             /* se for a ultima coluna precisamos colocar dois separadores */
 
             if(j==(c-1))
-                printf("|  %d  |", mat[i][j]);
+                printf("|%4d   |", mat[i][j]);
             else
-                printf("|  %d  ", mat[i][j]);
+                printf("|%4d   ", mat[i][j]);
             
         } /* end for coluna */
 
@@ -81,7 +81,7 @@ void show(){
 
         /* adocionando a última linha de "-" */
         if(i == (l-1))
-            printf("-------------------------------------\n");
+            printf("-------------------------------------------------\n");
 
     } /* end for linha */
 
