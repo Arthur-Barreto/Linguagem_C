@@ -5,11 +5,12 @@
 #define qtd 6
 
 /* Protótipo de funções */
-int cript(int info[], int N);
+int cript(int info[qtd], int i);
 
 int main(){
 
-    int info[qtd] = {};
+    int info[qtd] = {},
+        trad[qtd] = {};
 
     for (int i = 0; i < qtd; i++){
 
@@ -18,7 +19,12 @@ int main(){
 
     } /* end for */
 
-    info = cript(info,qtd);
+    for (int j = 0; j < qtd; j++){
+
+        trad[j] = cript(info[j],j);
+        printf("O valor convertido eh: %x \n",trad[j]);
+
+    } /* end for */
 
     system("PAUSE");
     return 0;
@@ -27,19 +33,15 @@ int main(){
 
 /* Desenvolvilmento das funções */
 
-int cript(int info[], int N){
+int cript(int info[qtd], int i){
 
-    for (int i = 0; i < N; i++){
+    /* resto da divisão por 2 de info[i] será 1 para casos ímpares
+    do contrário, nulo */
 
-        /* resto da divisão por 2 de info[i] será 1 para casos ímpares
-        do contrário, nulo */
+    if (info[i]%2)
+        info[i] -= 3;
+    else
+        info[i] += 5;
 
-        if (info[i]%2)
-            info[i] -= 3;
-        else
-            info[i] += 5;
-
-    } /* end for */
-
-    return info;
+    return info[i];
 } /* end cript */
